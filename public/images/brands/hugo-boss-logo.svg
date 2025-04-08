@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="98" viewBox="0 0 500 98" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: Arial, sans-serif; font-weight: bold; }
+    .placeholder { font-size: 12px; fill: #999; }
+  </style>
+  <text x="250" y="60" class="text" text-anchor="middle" font-size="48" fill="#000">HUGO BOSS</text>
+  <text x="250" y="85" class="placeholder" text-anchor="middle">EDUCATIONAL USE ONLY</text>
+</svg> 

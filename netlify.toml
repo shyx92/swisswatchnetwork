@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NEXT_PUBLIC_SITE_URL = "https://ellington-insurance.netlify.app"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs" 

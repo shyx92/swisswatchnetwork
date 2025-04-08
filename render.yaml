@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ellington-insurance
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 18.x
+    healthCheckPath: /api/health
+    autoDeploy: true 

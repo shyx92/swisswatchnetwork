@@ -54,19 +54,19 @@ export default function Home() {
     {
       name: 'Seiko Prospex',
       description: 'Professional-grade diving watches with exceptional water resistance and precision timing.',
-      image: '/images/collections/seiko-prospex.jpg',
+      image: 'https://www.seikowatches.com/uk-en/-/media/Images/GlobalEn/Seiko/Home/products/prospex/core_design/series_sea.jpg?mh=500&mw=900&hash=552B9C5739AD2C4824DA3C06D1E21100',
       category: 'Diving'
     },
     {
       name: 'Burberry',
       description: 'Elegant timepieces that blend British heritage with contemporary design.',
-      image: '/images/collections/burberry.jpg',
+      image: 'https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?q=80&w=800',
       category: 'Fashion'
     },
     {
       name: 'Gucci',
       description: 'Luxury watches featuring iconic design elements and premium craftsmanship.',
-      image: '/images/collections/gucci.jpg',
+      image: 'https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?q=80&w=800',
       category: 'Luxury'
     }
   ]

@@ -13,6 +13,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'watch-images.s3.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.seikowatches.com',
       }
     ]
   }

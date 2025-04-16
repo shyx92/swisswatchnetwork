@@ -4,9 +4,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
     domains: ['fossil.scene7.com', 'itssix.com'],
-  },
-  experimental: {
-    serverActions: true
   }
 };
 

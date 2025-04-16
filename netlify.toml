@@ -9,7 +9,7 @@
   included_files = ["dist/napi-v3-linux-x64-glibc/*"]
 
 [[redirects]]
-  from = "/api/*"
+  from = "/.netlify/functions/*"
   to = "/.netlify/functions/:splat"
   status = 200
 

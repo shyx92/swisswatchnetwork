@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 interface WatchModel {
   id: string;
@@ -23,6 +24,7 @@ interface Brand {
 }
 
 export default function PricingPortal() {
+  const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [error, setError] = useState('');
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
@@ -50,16 +52,24 @@ export default function PricingPortal() {
     }
   };
 
-  // Load authentication state and pricing data from API on mount
   useEffect(() => {
-    const storedAuth = localStorage.getItem('isAuthenticated');
-    if (storedAuth === 'true') {
-      setIsAuthenticated(true);
-      fetchPricingData();
-    }
+    const checkAuth = () => {
+      const storedAuth = localStorage.getItem('isAuthenticated');
+      if (storedAuth === 'true') {
+        setIsAuthenticated(true);
+        fetchPricingData();
+      } else {
+        setIsAuthenticated(false);
+        setError('');
+      }
+    };
+
+    checkAuth();
+    window.addEventListener('storage', checkAuth);
+    return () => window.removeEventListener('storage', checkAuth);
   }, []);
 
-  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const username = formData.get('username');
@@ -69,7 +79,7 @@ export default function PricingPortal() {
       setIsAuthenticated(true);
       setError('');
       localStorage.setItem('isAuthenticated', 'true');
-      fetchPricingData();
+      await fetchPricingData();
     } else {
       setError('Invalid credentials');
     }

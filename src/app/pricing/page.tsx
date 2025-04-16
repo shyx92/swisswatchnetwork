@@ -36,7 +36,12 @@ export default function PricingPortal() {
   const fetchPricingData = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch('/api/pricing');
+      // Use the Netlify function endpoint in production, fallback to local API in development
+      const endpoint = process.env.NODE_ENV === 'production' 
+        ? '/.netlify/functions/pricing'
+        : '/api/pricing';
+        
+      const response = await fetch(endpoint);
       if (!response.ok) {
         throw new Error('Failed to fetch pricing data');
       }

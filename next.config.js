@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'standalone',
+  output: 'export',
   images: {
     unoptimized: true,
     dangerouslyAllowSVG: true,
@@ -19,6 +19,14 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'www.seikowatches.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'fossil.scene7.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'itssix.com',
       }
     ],
     domains: ['res.cloudinary.com', 'static1.squarespace.com', 'fossil.scene7.com', 'itssix.com'],

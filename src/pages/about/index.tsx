@@ -26,9 +26,14 @@ export default function AboutPage() {
       description: 'Launched digital platform for B2B operations.'
     },
     {
+      year: '2020',
+      title: 'Strategic Move',
+      description: 'Established primary operations in UAE while maintaining London office.'
+    },
+    {
       year: '2024',
       title: 'Industry Leadership',
-      description: 'Leading UK distributor with global partnerships.'
+      description: 'Leading global distributor with headquarters in UAE and European presence.'
     }
   ]
 
@@ -83,10 +88,13 @@ export default function AboutPage() {
                   Founded in 1985, Swiss Watch Network began as a family-owned business in London's prestigious watch district. Our founder, with over two decades of experience in luxury timepieces, envisioned creating a trusted bridge between prestigious watch manufacturers and discerning retailers.
                 </p>
                 <p>
-                  What started as a modest distribution company has grown into one of the UK's leading wholesale partners for luxury watch brands. Our unwavering commitment to authenticity, reliability, and exceptional service has earned us the trust of retailers across the globe.
+                  What started as a modest distribution company in London has grown into a global leader in luxury watch distribution. While we maintain our London office, our primary operations are now based in the UAE, allowing us to better serve our international clientele and expand our reach across the Middle East and beyond.
                 </p>
                 <p>
-                  Today, we are proud to offer 100% authentic timepieces from the world's most renowned watch brands, serving a network of over 500 retailers across Europe and beyond. Our state-of-the-art logistics center ensures efficient distribution while maintaining the highest standards of quality control and authenticity verification.
+                  Our strategic move to the UAE has enabled us to strengthen our position as a global distributor while maintaining our strong European presence. Today, we are proud to offer 100% authentic timepieces from the world's most renowned watch brands, serving a network of over 500 retailers across Europe, the Middle East, and beyond.
+                </p>
+                <p>
+                  Our state-of-the-art logistics center in the UAE ensures efficient distribution while maintaining the highest standards of quality control and authenticity verification. This dual presence in both Europe and the Middle East allows us to provide exceptional service to our partners worldwide.
                 </p>
               </div>
             </div>

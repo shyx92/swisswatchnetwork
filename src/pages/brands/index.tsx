@@ -22,7 +22,7 @@ export default function BrandsPage() {
       image: '/images/brands/emporio-armani-logo.svg',
       features: ['Premium Materials', 'Swiss Movement', 'Water Resistant'],
       collections: ['Chronograph', 'Fashion', 'Dress'],
-      priceRange: '£149 - £499',
+      priceRange: '£30 - £499',
       deliveryTime: '3-5 business days',
       minOrder: '25 pieces'
     },
@@ -32,7 +32,7 @@ export default function BrandsPage() {
       image: '/images/brands/hugo-boss-logo.svg',
       features: ['German Engineering', 'Premium Leather', 'Sapphire Crystal'],
       collections: ['Classic', 'Business', 'Sport'],
-      priceRange: '£129 - £599',
+      priceRange: '£35 - £599',
       deliveryTime: '3-5 business days',
       minOrder: '20 pieces'
     },
@@ -42,7 +42,7 @@ export default function BrandsPage() {
       image: '/images/brands/michael-kors-logo.svg',
       features: ['Fashion Forward', 'Premium Finish', 'Smart Features'],
       collections: ['Fashion', 'Smart', 'Luxury'],
-      priceRange: '£139 - £449',
+      priceRange: '£25 - £449',
       deliveryTime: '3-5 business days',
       minOrder: '25 pieces'
     },
@@ -52,7 +52,7 @@ export default function BrandsPage() {
       image: '/images/brands/seiko-logo.svg',
       features: ['Japanese Movement', 'Automatic Options', 'Diving Certified'],
       collections: ['Automatic', 'Dive', 'Professional'],
-      priceRange: '£159 - £899',
+      priceRange: '£140 - £899',
       deliveryTime: '4-6 business days',
       minOrder: '15 pieces'
     },
@@ -62,7 +62,7 @@ export default function BrandsPage() {
       image: '/images/brands/burberry-logo.svg',
       features: ['British Design', 'Premium Materials', 'Heritage Style'],
       collections: ['Fashion', 'Classic', 'Check'],
-      priceRange: '£199 - £699',
+      priceRange: '£75 - £699',
       deliveryTime: '3-5 business days',
       minOrder: '20 pieces'
     },
@@ -72,7 +72,7 @@ export default function BrandsPage() {
       image: '/images/brands/maserati-logo.svg',
       features: ['Automotive Design', 'Italian Craftsmanship', 'Racing Spirit'],
       collections: ['Sport', 'Luxury', 'Racing'],
-      priceRange: '£179 - £599',
+      priceRange: '£70 - £599',
       deliveryTime: '4-6 business days',
       minOrder: '20 pieces'
     },
@@ -82,7 +82,7 @@ export default function BrandsPage() {
       image: '/images/brands/diesel-logo.svg',
       features: ['Bold Design', 'Urban Style', 'Unique Features'],
       collections: ['Fashion', 'Statement', 'Urban'],
-      priceRange: '£119 - £399',
+      priceRange: '£40 - £399',
       deliveryTime: '3-5 business days',
       minOrder: '25 pieces'
     },
@@ -92,7 +92,7 @@ export default function BrandsPage() {
       image: '/images/brands/gucci-logo.svg',
       features: ['Italian Luxury', 'Designer Style', 'Premium Quality'],
       collections: ['Fashion', 'Luxury', 'Icon'],
-      priceRange: '£229 - £999',
+      priceRange: '£160 - £999',
       deliveryTime: '4-6 business days',
       minOrder: '15 pieces'
     },
@@ -102,27 +102,27 @@ export default function BrandsPage() {
     <IconContext.Provider value={{ className: "w-4 h-4 text-blue-500 mr-2" }}>
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="relative py-24 bg-black">
+        <section className="relative py-12 sm:py-24 bg-black">
           <div className="absolute inset-0 bg-black/70" />
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white mb-4 sm:mb-6">
               Our Premium Brands
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
               Discover our curated collection of luxury watch brands, offering premium wholesale opportunities with guaranteed authenticity.
             </p>
           </div>
         </section>
 
         {/* Brands Grid */}
-        <section className="py-16">
+        <section className="py-8 sm:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12">
               {brands.map((brand) => (
                 <div key={brand.name} className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
-                  <div className="p-8 flex flex-col h-full">
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="relative h-16 w-48">
+                  <div className="p-4 sm:p-8 flex flex-col h-full">
+                    <div className="flex items-center justify-between mb-4 sm:mb-6">
+                      <div className="relative h-12 sm:h-16 w-36 sm:w-48">
                         <Image
                           src={brand.image}
                           alt={brand.name}
@@ -131,48 +131,48 @@ export default function BrandsPage() {
                         />
                       </div>
                       <div className="text-right">
-                        <span className="text-sm text-gray-500">Starting from</span>
-                        <p className="text-xl font-semibold text-black">{brand.priceRange.split(' - ')[0]}</p>
+                        <span className="text-xs sm:text-sm text-gray-500">Starting from</span>
+                        <p className="text-lg sm:text-xl font-semibold text-black">{brand.priceRange.split(' - ')[0]}</p>
                       </div>
                     </div>
                     
-                    <p className="text-gray-600 mb-6">{brand.description}</p>
+                    <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">{brand.description}</p>
                     
-                    <div className="grid grid-cols-2 gap-6 mb-6">
+                    <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Key Features</h4>
-                        <ul className="space-y-1">
+                        <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Key Features</h4>
+                        <ul className="space-y-0.5 sm:space-y-1">
                           {brand.features.map((feature) => (
-                            <li key={feature} className="flex items-center text-sm text-gray-600">
-                              <FaCheck />
+                            <li key={feature} className="flex items-center text-xs sm:text-sm text-gray-600">
+                              <FaCheck className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 mr-1 sm:mr-2" />
                               {feature}
                             </li>
                           ))}
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Collections</h4>
-                        <ul className="space-y-1">
+                        <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Collections</h4>
+                        <ul className="space-y-0.5 sm:space-y-1">
                           {brand.collections.map((collection) => (
-                            <li key={collection} className="text-sm text-gray-600">{collection}</li>
+                            <li key={collection} className="text-xs sm:text-sm text-gray-600">{collection}</li>
                           ))}
                         </ul>
                       </div>
                     </div>
 
-                    <div className="mt-auto pt-6 border-t border-gray-100">
-                      <div className="grid grid-cols-3 gap-4 text-sm">
+                    <div className="mt-auto pt-4 sm:pt-6 border-t border-gray-100">
+                      <div className="grid grid-cols-3 gap-2 sm:gap-4 text-xs sm:text-sm">
                         <div className="flex items-center">
-                          <FaAward />
+                          <FaAward className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 mr-1 sm:mr-2" />
                           <span className="text-gray-600">Min: {brand.minOrder}</span>
                         </div>
                         <div className="flex items-center">
-                          <FaClock />
-                          <span className="text-gray-600">5-10 business days</span>
+                          <FaClock className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 mr-1 sm:mr-2" />
+                          <span className="text-gray-600">5-10 days</span>
                         </div>
                         <div className="flex items-center">
-                          <FaTruck />
-                          <span className="text-gray-600">Worldwide Shipping</span>
+                          <FaTruck className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 mr-1 sm:mr-2" />
+                          <span className="text-gray-600">Global</span>
                         </div>
                       </div>
                     </div>
@@ -184,17 +184,17 @@ export default function BrandsPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gray-100 py-24">
+        <section className="bg-gray-100 py-12 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-bold mb-4 sm:mb-6">
               Become a Partner
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto mb-6 sm:mb-8">
               Partner with us to access our premium collection of 100% authentic luxury timepieces at competitive wholesale prices. Every watch comes with complete authenticity documentation.
             </p>
             <a
               href="/contact"
-              className="inline-block bg-black text-white px-8 py-3 rounded hover:bg-gray-900 transition-colors"
+              className="inline-block bg-black text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded hover:bg-gray-900 transition-colors text-sm sm:text-base"
             >
               Contact Us
             </a>

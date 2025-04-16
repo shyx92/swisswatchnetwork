@@ -1,14 +1,22 @@
 import React from 'react'
 import Image from 'next/image'
 
+interface FormData {
+  name: string;
+  email: string;
+  company: string;
+  message: string;
+}
+
+const initialFormData: FormData = {
+  name: '',
+  email: '',
+  company: '',
+  message: ''
+};
+
 export default function ContactPage() {
-  const [formData, setFormData] = React.useState({
-    name: '',
-    company: '',
-    email: '',
-    phone: '',
-    message: '',
-  })
+  const [formData, setFormData] = React.useState(initialFormData)
   const [isSubmitting, setIsSubmitting] = React.useState(false)
   const [submitted, setSubmitted] = React.useState(false)
 
@@ -22,13 +30,7 @@ export default function ContactPage() {
       await new Promise(resolve => setTimeout(resolve, 1000))
       setSubmitted(true)
       // Reset form
-      setFormData({
-        name: '',
-        company: '',
-        email: '',
-        phone: '',
-        message: '',
-      })
+      setFormData(initialFormData)
     } catch (error) {
       console.error('Error submitting form:', error)
       alert('There was an error submitting your enquiry. Please try again later.')
@@ -63,40 +65,25 @@ export default function ContactPage() {
       {/* Contact Form Section */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Contact Information */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h2 className="text-3xl font-playfair font-bold mb-8">Get in Touch</h2>
-              <div className="space-y-8">
+              <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
+              <p className="text-gray-600 mb-4">
+                Interested in partnering with us? Fill out the form and our team will get back to you within 24 hours with wholesale pricing and authenticity documentation details.
+              </p>
+              <div className="space-y-4">
                 <div>
-                  <h3 className="text-xl font-bold mb-4">Business Hours</h3>
-                  <p className="text-gray-600">
-                    Monday - Friday: 9:00 AM - 5:30 PM<br />
-                    Saturday - Sunday: Closed
-                  </p>
+                  <h3 className="font-semibold">Email</h3>
+                  <a href="mailto:info@swisswatchnetwork.com" className="text-blue-600 hover:text-blue-800">
+                    info@swisswatchnetwork.com
+                  </a>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-4">Contact Information</h3>
-                  <div className="space-y-2 text-gray-600">
-                    <p>123 Watch Street</p>
-                    <p>London, SW1A 1AA</p>
-                    <p>United Kingdom</p>
-                    <p className="pt-2">
-                      <a href="tel:+441234567890" className="hover:text-black">
-                        +44 (0) 123 456 7890
-                      </a>
-                    </p>
-                    <p>
-                      <a href="mailto:wholesale@swisswatchnetwork.com" className="hover:text-black">
-                        wholesale@swisswatchnetwork.com
-                      </a>
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-4">Become a Partner</h3>
+                  <h3 className="font-semibold">Address</h3>
                   <p className="text-gray-600">
-                    Interested in partnering with us? Fill out the form and our team will get back to you within 24 hours with wholesale pricing and authenticity documentation details.
+                    SH Group FZE LLC<br />
+                    SPC Free Zone, Business Center<br />
+                    Sharjah, United Arab Emirates
                   </p>
                 </div>
               </div>
@@ -106,20 +93,35 @@ export default function ContactPage() {
             <div className="bg-gray-50 p-8 rounded-lg">
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-black"
-                      required
-                      disabled={isSubmitting}
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                      />
+                    </div>
                   </div>
 
                   <div>
@@ -134,37 +136,6 @@ export default function ContactPage() {
                       onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-black"
                       required
-                      disabled={isSubmitting}
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-black"
-                      required
-                      disabled={isSubmitting}
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-black"
                       disabled={isSubmitting}
                     />
                   </div>

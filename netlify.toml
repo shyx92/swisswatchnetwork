@@ -4,7 +4,12 @@
 
 [build.environment]
   NODE_VERSION = "18"
-  NEXT_PUBLIC_SITE_URL = "https://swisswatchnetwork.netlify.app"
+  NEXT_PUBLIC_SITE_URL = "https://swisswatchnetwork.com"
+  NEXT_USE_NETLIFY_EDGE = "true"
 
 [[plugins]]
-  package = "@netlify/plugin-nextjs" 
+  package = "@netlify/plugin-nextjs"
+
+[functions]
+  external_node_modules = ["@mongodb-js/zstd", "mongodb-client-encryption", "snappy"]
+  included_files = ["dist/napi-v3-linux-x64-glibc/*"] 

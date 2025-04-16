@@ -1,27 +1,11 @@
 [build]
   command = "npm run build"
-  publish = "out"
-  functions = "netlify/functions"
-
-[functions]
-  node_bundler = "esbuild"
-  external_node_modules = ["@mongodb-js/zstd", "mongodb-client-encryption", "snappy"]
-  included_files = ["dist/napi-v3-linux-x64-glibc/*"]
-
-[[redirects]]
-  from = "/.netlify/functions/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "18"
   NEXT_PUBLIC_SITE_URL = "https://swisswatchnetwork.com"
+  NEXT_USE_NETLIFY_EDGE = "true"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs" 

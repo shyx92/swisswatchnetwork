@@ -38,7 +38,7 @@ export default function PricingPortal() {
   const fetchPricingData = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch('/.netlify/functions/pricing');
+      const response = await fetch('/api/pricing');
       if (!response.ok) {
         throw new Error('Failed to fetch pricing data');
       }
